@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="MyCity.Views.RoadView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyCity.Views"
+             xmlns:vm="clr-namespace:MyCity.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000"
+             d:DataContext="{d:DesignInstance vm:RoadViewModel}">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button 
+                FontSize="20"  
+                Content="Back"
+                Height="50"
+                Background="#11397E"
+                Foreground="White"
+                FontFamily="Champagne &amp; Limousines"
+                Command="{Binding BackCommand}"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Margin="0,10" FontSize="25" Content="Image:"/>
+                <Image Margin="0,20" Source="{Binding Image}" Height="270" Width="270"/>
+                <Button Margin="0,10" Background="#4169E1" Height="70" FontSize="20" Content="BROWSE" Command="{Binding BrowseCommand}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Label Margin="0,10" FontSize="25" Content="Title:"/>
+                <TextBox FontSize="15" Text="{Binding Road.Header}"/>
+                <Label Margin="0,10" FontSize="25" Content="Text:"/>
+                <TextBox TextWrapping="Wrap" FontSize="15" Text="{Binding Road.Text}"/>
+                <Label Margin="0,10" FontSize="25" Content="Date:"/>
+                <DatePicker 
+                    Width="300" 
+                    HorizontalAlignment="Left"
+                    SelectedDateFormat="Short" 
+                    SelectedDate="{Binding Road.DateTime}" 
+                    />
+                <UniformGrid>
+                    <Button 
+                        Margin="20,110"
+                        HorizontalAlignment="Left" 
+                        Background="#4169E1" 
+                        Height="70" 
+                        Width="300" 
+                        FontSize="25" 
+                        Content="Send" 
+                        Command="{Binding SendCommand}"/>
+                    <Button 
+                        Background="#4169E1" 
+                        Height="70" 
+                        Width="300" 
+                        FontSize="25" 
+                        Content="Watch Problems" 
+                        HorizontalAlignment="Right"
+                        Margin="20,110"
+                        Command="{Binding WatchProblemCommand}"/>
+                </UniformGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

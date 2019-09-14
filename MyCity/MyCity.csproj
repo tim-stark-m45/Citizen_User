@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D37306A-B43C-4776-8ADE-81885C5EA8C8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyCity</RootNamespace>
+    <AssemblyName>MyCity</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.3.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.3\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Configuration.4.1.0\lib\net45\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.1.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.1.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.1.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.1.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.1.0\lib\net462\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Messages\SendImportant.cs" />
+    <Compile Include="Messages\SendNews.cs" />
+    <Compile Include="Migrations\201907241106487_Initial.cs" />
+    <Compile Include="Migrations\201907241106487_Initial.Designer.cs">
+      <DependentUpon>201907241106487_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907241136202_Initial2.cs" />
+    <Compile Include="Migrations\201907241136202_Initial2.Designer.cs">
+      <DependentUpon>201907241136202_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907241403063_TExt.cs" />
+    <Compile Include="Migrations\201907241403063_TExt.Designer.cs">
+      <DependentUpon>201907241403063_TExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907241429088_DateString.cs" />
+    <Compile Include="Migrations\201907241429088_DateString.Designer.cs">
+      <DependentUpon>201907241429088_DateString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907281239320_AllTables.cs" />
+    <Compile Include="Migrations\201907281239320_AllTables.Designer.cs">
+      <DependentUpon>201907281239320_AllTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907291345360_One.cs" />
+    <Compile Include="Migrations\201907291345360_One.Designer.cs">
+      <DependentUpon>201907291345360_One.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907300800231_Header.cs" />
+    <Compile Include="Migrations\201907300800231_Header.Designer.cs">
+      <DependentUpon>201907300800231_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AppDbContext.cs" />
+    <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\Government.cs" />
+    <Compile Include="Models\Hospitals.cs" />
+    <Compile Include="Models\Idea.cs" />
+    <Compile Include="Models\Important.cs" />
+    <Compile Include="Models\Infrastructure.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\PublicTransport.cs" />
+    <Compile Include="Models\Road.cs" />
+    <Compile Include="Models\Security.cs" />
+    <Compile Include="Models\Trade_Advertising.cs" />
+    <Compile Include="Models\Yard.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\ZoomBorder.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModels\BuildingPVModel.cs" />
+    <Compile Include="ViewModels\BuildingViewModel.cs" />
+    <Compile Include="ViewModels\GovernmentPVModel.cs" />
+    <Compile Include="ViewModels\GovernmentViewModel.cs" />
+    <Compile Include="ViewModels\HelloViewModel.cs" />
+    <Compile Include="ViewModels\HospitalPVModel.cs" />
+    <Compile Include="ViewModels\HospitalViewModel.cs" />
+    <Compile Include="ViewModels\IdeaPVModel.cs" />
+    <Compile Include="ViewModels\IdeaViewModel.cs" />
+    <Compile Include="ViewModels\ImportantInfofViewModel.cs" />
+    <Compile Include="ViewModels\ImportantListViewModel.cs" />
+    <Compile Include="ViewModels\InfrastructurePVModel.cs" />
+    <Compile Include="ViewModels\InfrastructureViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\NewsInfoViewModel.cs" />
+    <Compile Include="ViewModels\NewsListViewModel.cs" />
+    <Compile Include="ViewModels\ProblemsViewModel.cs" />
+    <Compile Include="ViewModels\PublicTransportPVModel.cs" />
+    <Compile Include="ViewModels\PublicTransportViewModel.cs" />
+    <Compile Include="ViewModels\RoadPVModel.cs" />
+    <Compile Include="ViewModels\RoadViewModel.cs" />
+    <Compile Include="ViewModels\SecurityPVModel.cs" />
+    <Compile Include="ViewModels\SecurityViewModel.cs" />
+    <Compile Include="ViewModels\TradeAdvertisingPVModel.cs" />
+    <Compile Include="ViewModels\TradeAdvertisingViewModel.cs" />
+    <Compile Include="ViewModels\YardPVModel.cs" />
+    <Compile Include="ViewModels\YardViewModel.cs" />
+    <Compile Include="Views\BuildingPV.xaml.cs">
+      <DependentUpon>BuildingPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuildingView.xaml.cs">
+      <DependentUpon>BuildingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GovernmentPV.xaml.cs">
+      <DependentUpon>GovernmentPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GovernmentView.xaml.cs">
+      <DependentUpon>GovernmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelloView.xaml.cs">
+      <DependentUpon>HelloView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HospitalPV.xaml.cs">
+      <DependentUpon>HospitalPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HospitalView.xaml.cs">
+      <DependentUpon>HospitalView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdeaPV.xaml.cs">
+      <DependentUpon>IdeaPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IdeaView.xaml.cs">
+      <DependentUpon>IdeaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportantInfoView.xaml.cs">
+      <DependentUpon>ImportantInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportantListView.xaml.cs">
+      <DependentUpon>ImportantListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfrastructurePV.xaml.cs">
+      <DependentUpon>InfrastructurePV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfrastructureView.xaml.cs">
+      <DependentUpon>InfrastructureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsInfoView.xaml.cs">
+      <DependentUpon>NewsInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsListView.xaml.cs">
+      <DependentUpon>NewsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProblemsView.xaml.cs">
+      <DependentUpon>ProblemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PublicTransportPV.xaml.cs">
+      <DependentUpon>PublicTransportPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PublicTransportView.xaml.cs">
+      <DependentUpon>PublicTransportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoadPV.xaml.cs">
+      <DependentUpon>RoadPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoadView.xaml.cs">
+      <DependentUpon>RoadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecurityPV.xaml.cs">
+      <DependentUpon>SecurityPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecurityView.xaml.cs">
+      <DependentUpon>SecurityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TradeAdvertisingPV.xaml.cs">
+      <DependentUpon>TradeAdvertisingPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TradeAdvertisingView.xaml.cs">
+      <DependentUpon>TradeAdvertisingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YardPV.xaml.cs">
+      <DependentUpon>YardPV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YardView.xaml.cs">
+      <DependentUpon>YardView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201907241106487_Initial.resx">
+      <DependentUpon>201907241106487_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907241136202_Initial2.resx">
+      <DependentUpon>201907241136202_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907241403063_TExt.resx">
+      <DependentUpon>201907241403063_TExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907241429088_DateString.resx">
+      <DependentUpon>201907241429088_DateString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281239320_AllTables.resx">
+      <DependentUpon>201907281239320_AllTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291345360_One.resx">
+      <DependentUpon>201907291345360_One.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300800231_Header.resx">
+      <DependentUpon>201907300800231_Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="autofac.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuildingPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuildingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GovernmentPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GovernmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HelloView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HospitalPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HospitalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IdeaPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IdeaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportantInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportantListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InfrastructurePV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InfrastructureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProblemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PublicTransportPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PublicTransportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoadPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecurityPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecurityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TradeAdvertisingPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TradeAdvertisingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YardPV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CitizenMain.jpg" />
+    <Resource Include="Images\CitizenUser.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

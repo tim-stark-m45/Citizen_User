@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MyCity"
+                    xmlns:v="clr-namespace:MyCity.Views"
+                    xmlns:vm="clr-namespace:MyCity.ViewModels">
+    <DataTemplate DataType="{x:Type vm:ProblemsViewModel}">
+        <v:ProblemsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:InfrastructureViewModel}">
+        <v:InfrastructureView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BuildingViewModel}">
+        <v:BuildingView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:GovernmentViewModel}">
+        <v:GovernmentView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:HelloViewModel}">
+        <v:HelloView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:HospitalViewModel}">
+        <v:HospitalView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:IdeaViewModel}">
+        <v:IdeaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:PublicTransportViewModel}">
+        <v:PublicTransportView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RoadViewModel}">
+        <v:RoadView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SecurityViewModel}">
+        <v:SecurityView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:TradeAdvertisingViewModel}">
+        <v:TradeAdvertisingView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:YardViewModel}">
+        <v:YardView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ImportantListViewModel}">
+        <v:ImportantListView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ImportantInfofViewModel}">
+        <v:ImportantInfoView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NewsListViewModel}">
+        <v:NewsListView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NewsInfoViewModel}">
+        <v:NewsInfoView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BuildingPVModel}">
+        <v:BuildingPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:GovernmentPVModel}">
+        <v:GovernmentPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:HospitalPVModel}">
+        <v:HospitalPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:IdeaPVModel}">
+        <v:IdeaPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:InfrastructurePVModel}">
+        <v:InfrastructurePV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:PublicTransportPVModel}">
+        <v:PublicTransportPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:TradeAdvertisingPVModel}">
+        <v:TradeAdvertisingPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SecurityPVModel}">
+        <v:SecurityPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:YardPVModel}">
+        <v:YardPV/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RoadPVModel}">
+        <v:RoadPV/>
+    </DataTemplate>
+</ResourceDictionary>

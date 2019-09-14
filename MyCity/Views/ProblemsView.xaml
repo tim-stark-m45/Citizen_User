@@ -1,0 +1,312 @@
+﻿<UserControl x:Class="MyCity.Views.ProblemsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyCity.Views"
+             xmlns:vm="clr-namespace:MyCity.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000" Name="Window"
+             d:DataContext="{d:DesignInstance vm:ProblemsViewModel}">
+    <UniformGrid Background="RoyalBlue">
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding BuildingCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Building"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="BUILDING"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding GovernmentCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="AccountBalance"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="GOVERNMENT"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding HospitalCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Hospital"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="HOSPITAL"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding InfrastructureCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Tree"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="INFRASTRUCTURE"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding TransportCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Transportation"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="TRANSPORT"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding RoadCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Road"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="ROAD"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding SecurityCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Security"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="SECURITY"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding TradeCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Trademark"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="TRADE"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+
+        <Button
+                Margin="20"
+                Height="180"
+                Width="250"
+                Foreground="Black" 
+                Background="#23B7B7"
+                BorderBrush="#23B7B7" 
+                BorderThickness="0"
+                Command="{Binding YardCommand}">
+            <Grid Height="170" Width="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#7ADBDB" Width="80" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon 
+                        Grid.Column="1"
+                        Kind="Home"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Height="40"
+                        Width="40"/>
+                </Grid>
+                <TextBlock 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Grid.Row="1"
+                        FontSize="25"   
+                        Text="YARD"
+                        FontFamily="Champagne &amp; Limousines"  Grid.ColumnSpan="3"/>
+            </Grid>
+        </Button>
+        
+    </UniformGrid>
+</UserControl>

@@ -1,0 +1,53 @@
+{
+  "defaultAssembly": "MyCity",
+  "components": [
+    { "type": "MyCity.ViewModels.MainWindowViewModel" },
+    { "type": "MyCity.ViewModels.ProblemsViewModel" },
+    { "type": "MyCity.ViewModels.InfrastructureViewModel" },
+    { "type": "MyCity.ViewModels.BuildingViewModel" },
+    { "type": "MyCity.ViewModels.GovernmentViewModel" },
+    { "type": "MyCity.ViewModels.HelloViewModel" },
+    { "type": "MyCity.ViewModels.HospitalViewModel" },
+    { "type": "MyCity.ViewModels.IdeaViewModel" },
+    { "type": "MyCity.ViewModels.PublicTransportViewModel" },
+    { "type": "MyCity.ViewModels.RoadViewModel" },
+    { "type": "MyCity.ViewModels.SecurityViewModel" },
+    { "type": "MyCity.ViewModels.TradeAdvertisingViewModel" },
+    { "type": "MyCity.ViewModels.YardViewModel" },
+    { "type": "MyCity.ViewModels.ImportantListViewModel" },
+    { "type": "MyCity.ViewModels.ImportantInfofViewModel" },
+    { "type": "MyCity.ViewModels.NewsListViewModel" },
+    { "type": "MyCity.ViewModels.NewsInfoViewModel" },
+    { "type": "MyCity.ViewModels.BuildingPVModel" },
+    { "type": "MyCity.ViewModels.GovernmentPVModel" },
+    { "type": "MyCity.ViewModels.HospitalPVModel" },
+    { "type": "MyCity.ViewModels.IdeaPVModel" },
+    { "type": "MyCity.ViewModels.InfrastructurePVModel" },
+    { "type": "MyCity.ViewModels.PublicTransportPVModel" },
+    { "type": "MyCity.ViewModels.RoadPVModel" },
+    { "type": "MyCity.ViewModels.SecurityPVModel" },
+    { "type": "MyCity.ViewModels.TradeAdvertisingPVModel" },
+    { "type": "MyCity.ViewModels.YardPVModel" },
+    {
+      "type": "MyCity.Models.AppDbContext",
+      "instanceScope": "single-instance"
+    },
+    {
+      "type": "MyCity.Services.MessageService",
+      "services": [
+        {
+          "type": "MyCity.Services.IMessageService"
+        }
+      ]
+    },
+    {
+      "type": "MyCity.Services.NavigationService",
+      "services": [
+        {
+          "type": "MyCity.Services.INavigationService"
+        }
+      ],
+      "instanceScope": "single-instance"
+    }
+  ]
+}
